@@ -1,0 +1,309 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>PMS - Add New Patient</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<style type="text/css">
+.clickable {
+	margin-top: -15px;
+	font-size: 15px;
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('.panel-heading span.clickable').on("click", function (e) {
+            if ($(this).hasClass('panel-collapsed')) {
+                // expand the panel
+                $(this).parents('.panel').find('.panel-body').slideDown();
+                $(this).removeClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            }
+            else {
+                // collapse the panel
+                $(this).parents('.panel').find('.panel-body').slideUp();
+                $(this).addClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<body>
+  <div style="margin: 25px">
+    <form method="post">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">Personal Information</h3>
+          <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Basic Information</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="name">Full Name</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input id="name" name="name" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="address" style="padding-top: 30px;">Address</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <textarea id="address" name="address" class="form-control" style="height: 83px"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Contact Information</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="mobile">Mobile</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span> <input id="mobile" name="mobile" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="phone">Phone</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> <input id="phone" name="phone" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="email">Email</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> <input id="email" name="email" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Additional Information</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="dob">Birth Date</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span> <input id="dob" name="dob" type="date" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="age">Age</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span> <input id="age" name="age" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="gender">Gender</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> <select class="form-control" id="gender" name="gender">
+                              <option></option>
+                              <option>Male</option>
+                              <option>Female</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Physician Information -->
+            <div class="col-xs-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Family Doctor Information</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="name">Name</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input id="name" name="name" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="mobile">Mobile</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span> <input id="mobile" name="mobile" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 control-label" for="phone">Phone</label>
+                        <div class="col-md-9 inputGroupContainer">
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> <input id="phone" name="phone" type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">Medical Information</h3>
+          <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+        </div>
+        <div class="panel-body">
+          <label class="col-md-12 control-label" for="name" style="margin-bottom: 15px">Blood Group</label>
+          <div class="col-md-3 inputGroupContainer" style="margin-bottom: 20px">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span><input id="phone" name="phone" type="text" class="form-control">
+            </div>
+          </div>
+          <label class="col-md-12 control-label" for="name">Have you suffered from any of the following ?</label>
+          <div class="col-xs-3">
+            <div class="checkbox">
+              <label><input type="checkbox" value="1">AIDS</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="2">Asthma</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="3">Arthritis, Rheumatism</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="4">Blood Disease</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="5">Blood Pressure High / Low</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="6">Corticosteroid Treatment</label>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="checkbox">
+              <label><input type="checkbox" value="7">Cancer</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="8">Diabetes</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="9">Epilepsy</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="10">Heart Problems</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="11">Hepatitis</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="12">Herpes</label>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="checkbox">
+              <label><input type="checkbox" value="13">Jaundice</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="14">Liver Problems</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="15">Kidney Problems</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="16">Psychiatric Treatment</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="17">Radiation Treatment</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="18">Respiratory Problems</label>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="checkbox">
+              <label><input type="checkbox" value="19">Rheumatic Fever</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="20">TB</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="21">Thyroid Problems</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="22">Ulcer</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="23">Veneral Problems</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="24">Other</label>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="2" id="comment"></textarea>
+            </div>
+          </div>
+          <label class="col-md-12 control-label" for="name" style="margin-bottom: 15px">Woman</label>
+          <div class="col-xs-12" style="margin-bottom: 20px">
+            <div class="col-xs-2" style="padding-left: 0px;">Are you pregnant ?</div>
+            <div class="col-xs-2">
+              <span><input style="margin-right: 5px;" type="radio" name="optradio">Yes</span> <span style="margin-left: 15px;"><input style="margin-right: 5px;" type="radio" name="optradio">No</span>
+            </div>
+            <div class="col-xs-3">
+              If yes, your due date ? <input id="duedate" name="duedate" type="date" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
